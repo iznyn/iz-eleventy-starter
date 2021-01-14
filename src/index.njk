@@ -1,0 +1,29 @@
+{% extends "./_includes/layout/default.njk" %}
+
+{% block title %}It does work{% endblock %}
+
+{% block content %}
+  <div class="fixed inset-0 flex flex-col justify-center items-center">
+    <div>
+      <span class="text-change">Good design</span><br/>
+      <span class="change">is<br/>as little design<br/>as possible</span>
+    </div>
+
+    <div x-data="{ open: false }" class="mt-10 relative">
+      <button class="py-2 px-10 bg-blue-500 rounded-md text-white transition duration-500 ease-in-out hover:bg-blue-700" @click="open = true">Open Dropdown</button>
+
+      <ul
+          class="p-4 absolute left-0 top-12 bg-gray-200 border border-solid border-gray-300"
+          x-show="open"
+          @click.away="open = false"
+          x-transition:enter="transition-transform transition-opacity ease-out duration-300"
+          x-transition:enter-start="opacity-0 transform -translate-y-2"
+          x-transition:enter-end="opacity-100 transform translate-y-0"
+          x-transition:leave="transition ease-in duration-300"
+          x-transition:leave-end="opacity-0 transform -translate-y-3"
+      >
+          Dropdown Body
+      </ul>
+    </div>
+  </div>
+{% endblock %}

@@ -1,0 +1,24 @@
+
+<head>
+  <meta charset="UTF-8"/>
+  <meta http-equiv="x-ua-compatible" content="ie=edge"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, viewport-fit=cover"/>
+  <title>
+    {{ title if title else site.title }}
+  </title>
+  {% if site.author !== '' %}
+    <meta name="author" content="{{ site.author }}" />
+  {% endif %}
+  <meta name="description" content="{{ description if description else site.description }}"/>
+  <meta property="og:title" content="{{ title if title else site.title }}" />
+  <meta property="og:description" content="{{ description if description else site.description }}"/>
+  <meta property="og:locale" content="{{ site.locale }}" />
+  <meta property="og:site_name" content="{{ site.site_name }}" />
+
+  {% block head_meta %}{% endblock %}
+
+  <link rel="stylesheet" href="/assets/styles/main.css?v={% version %}"/>
+
+  {% block head %}{% endblock %}
+  <script src="/assets/scripts/alpine.js?v={% version %}"></script>
+</head>

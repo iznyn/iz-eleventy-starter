@@ -1,0 +1,21 @@
+---js
+{
+  title: "Posts",
+  description: "Our latest posts"
+}
+---
+{% extends "./_includes/layout/default.njk" %}
+
+{% block content %}
+  <div class="fixed inset-0 flex justify-center items-center">
+    <div>
+      <h1 class="text-4xl font-bold mb-3">{{ title }}</h1>
+      <p>{{ description }}</p>
+    </div>
+    <ul>
+      {% for post in collections.posts -%}
+        <li><a href="{{ post.url }}">{{ post.data.title }}</a></li>
+      {% endfor -%}
+    </ul>
+  </div>
+{% endblock %}

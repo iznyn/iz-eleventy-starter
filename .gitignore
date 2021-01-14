@@ -1,0 +1,12 @@
+# Dependencies
+/node_modules
+
+# Output directories
+/_site
+
+# Misc
+.DS_Store
+Thumbs.db
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
