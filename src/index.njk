@@ -25,5 +25,9 @@
           Dropdown Body
       </ul>
     </div>
+
+    <div x-data="{name: 'Bruno Fernandez'}">
+      <p x-data x-text="$parent.name"></p>
+    </div>
   </div>
 {% endblock %}
